@@ -69,22 +69,27 @@ public class CustomerManager3 {
 				}
 				break;
 			case 'd' :
-	            System.out.println("데이터를 삭제하시겠습니까? (Y/N)");
-	            printCustomerData(index);
-	            String menu2 = scan.next();
-	            menu2 = menu2.toLowerCase();
-	            if(menu2.charAt(0) == 'y') {
-	            if( (index >= 0) && (index < count)) {
-	               System.out.println(index + "번째 데이터를 삭제합니다.");
-	               deleteCustomerData(index);}
-	            else {
-		               System.out.println("삭제할 데이터가 선택되지 않았습니다.");
-		            }
-	            }
-	            else if (menu2.charAt(0) == 'n') {
-	               System.out.println("취소되었습니다.");
-	            }
-	            break;
+            if (count == 0){
+               System.out.println("삭제할 데이터가 없습니다.");
+            }
+            else {
+            System.out.println("데이터를 삭제하시겠습니까? (Y/N)");
+            printCustomerData(index);
+            String menu2 = scan.next();
+            menu2 = menu2.toLowerCase();
+            if(menu2.charAt(0) == 'y') {
+            if( (index >= 0) && (index < count)) {
+               System.out.println(index + "번째 데이터를 삭제합니다.");
+               deleteCustomerData(index);}
+            else {
+               System.out.println("삭제할 데이터가 선택되지 않았습니다.");
+               }
+            }
+            else if (menu2.charAt(0) == 'n') {
+               System.out.println("취소되었습니다.");
+            }
+            }
+            break;
 	         
 			case 'q' :
 				System.out.println("프로그램을 종료합니다.");
